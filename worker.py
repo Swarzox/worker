@@ -42,9 +42,9 @@ def main():
     worker = Worker(
         WorkerConfig(
             model_server_url='http://127.0.0.1',
-            model_server_port=5000,
+            model_server_port=5001,  # Port interne du serveur FastAPI
             model_log_file='/var/log/zimage/model.log',
-            model_healthcheck_url='http://127.0.0.1:5000/health',
+            model_healthcheck_url='http://127.0.0.1:5001/health',
             handlers=[
                 HandlerConfig(
                     route='/generate',
