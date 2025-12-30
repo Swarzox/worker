@@ -44,7 +44,8 @@ def main():
             model_server_url='http://127.0.0.1',
             model_server_port=5001,  # Port interne du serveur FastAPI
             model_log_file='/var/log/zimage/model.log',
-            model_healthcheck_url='http://127.0.0.1:5001/health',
+            # Note: Ne pas utiliser model_healthcheck_url car le vastai-sdk a un bug
+            # qui empêche les healthchecks de fonctionner correctement
             handlers=[
                 HandlerConfig(
                     route='/generate',
