@@ -1,0 +1,26 @@
+# Z-Image Turbo - Requirements for VAST.AI Serverless
+
+# VAST.AI SDK (includes Worker, WorkerConfig, etc.)
+vastai-sdk>=0.3.1
+
+# Core ML dependencies
+torch>=2.5.0
+transformers>=4.47.0
+accelerate>=0.34.0
+safetensors>=0.4.0
+
+# Note: diffusers must be installed from source for Z-Image support
+# pip install git+https://github.com/huggingface/diffusers.git
+
+# Image processing
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# API server (for model_server.py)
+fastapi>=0.115.0
+uvicorn[standard]>=0.24.0,<0.32
+pydantic>=2.0.0
+
+# HuggingFace Hub
+huggingface-hub>=0.26.0
+sentencepiece>=0.2.0
