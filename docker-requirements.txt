@@ -1,0 +1,42 @@
+# Z-Image Turbo - Requirements for Docker build
+
+# Core ML dependencies
+# PyTorch 2.7.1 for TorchAO FP8 compatibility
+# Note: torchvision must match PyTorch version (base image has 2.8.0, we need 0.22.1)
+torch>=2.7.1,<2.8.0
+torchvision>=0.22.1,<0.23.0
+transformers>=4.55.2
+accelerate>=1.0.0
+safetensors>=0.4.0
+
+# Note: diffusers must be installed from source for Z-Image support
+# pip install git+https://github.com/huggingface/diffusers.git
+
+# Image processing
+Pillow>=10.0.0
+numpy>=1.24.0
+
+# Cache-DiT (runtime)
+pyyaml
+einops>=0.8.1
+# TorchAO 0.14.1 for FP8 + PyTorch 2.7.1 compatibility
+torchao==0.14.1
+
+# API server
+fastapi>=0.115.0
+uvicorn[standard]>=0.24.0,<0.32
+pydantic>=2.0.0
+
+# Vast.ai Serverless PyWorker runtime deps (vastai-sdk is installed separately with --no-deps)
+aiohttp==3.10.1
+anyio>=4.4
+psutil>=6.0,<6.1
+pycryptodome>=3.20,<3.21
+pyparsing>=3.1,<4.0
+requests==2.32.3
+urllib3>=2.0,<3.0
+
+# HuggingFace Hub
+huggingface-hub>=0.26.0
+hf_transfer>=0.1.0
+sentencepiece>=0.2.0
